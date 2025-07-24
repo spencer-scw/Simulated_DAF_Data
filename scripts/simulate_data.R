@@ -3,6 +3,7 @@ library(tidyr)
 library(lubridate)
 library(stringr)
 library(vroom)
+library(here)
 
 set.seed(123)  # For reproducibility
 
@@ -84,5 +85,5 @@ grantmaking_data <- bind_rows(grantmaking_records)
 # 5. Preview
 print(head(grantmaking_data))
 
-# 6. Write to data-produced file
-vroom_write(grantmaking_data, "data-produced/grantmaking_data.csv")
+# 6. Write to data-produced folder
+vroom_write(grantmaking_data, here("data-produced", "grantmaking_data.csv"))
